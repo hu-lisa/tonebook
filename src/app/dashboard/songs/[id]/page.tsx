@@ -34,12 +34,12 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     return (
         <div className="flex flex-col space-y-2">
             <Link href='/dashboard/songs' className="hover:underline">{'<- All Songs'}</Link>
-            <div className="flex flex-row items-center justify-between">
-                <div className="flex flex-row items-center space-x-2">
-                    <header className="text-3xl">{song.title}</header>
+            <div className="flex gap-2 flex-row items-center justify-between">
+                <div className="flex flex-row flex-wrap items-center gap-2">
+                    <header className="text-2xl wrap-break-word sm:text-3xl">{song.title}</header>
                     <StatusMenu song={song} />
                 </div>
-                <div className="flex flex-row space-x-2">
+                <div className="flex flex-row justify-end gap-2">
                     <EditForm song={song} />
                     <DeleteButton songId={songId} />
                 </div>

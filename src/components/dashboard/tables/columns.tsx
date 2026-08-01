@@ -49,7 +49,7 @@ export const mobileColumns: ColumnDef<SongWithTags>[] = [
     {
         accessorKey: "title",
         header: "Song",
-        size: 240,
+        size: 200,
     },
     {
         accessorKey: "lastPracticedAt",
