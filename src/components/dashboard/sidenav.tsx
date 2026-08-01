@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Sidebar, SidebarHeader, SidebarContent, SidebarGroup, SidebarMenu, SidebarMenuButton, SidebarFooter, SidebarMenuItem } from "../ui/sidebar";
 import { usePathname } from "next/navigation";
 
-const links = [
+export const links = [
     {href: '/dashboard', label: 'Home'},
     {href: '/dashboard/songs', label: 'Songs'},
     {href: '/dashboard/gear', label: 'Gear'},

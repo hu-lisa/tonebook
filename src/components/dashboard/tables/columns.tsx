@@ -44,3 +44,20 @@ export const columns: ColumnDef<SongWithTags>[] = [
         },
     },
 ]
+
+export const mobileColumns: ColumnDef<SongWithTags>[] = [
+    {
+        accessorKey: "title",
+        header: "Song",
+        size: 240,
+    },
+    {
+        accessorKey: "lastPracticedAt",
+        header: () => <div className="text-right">Last Practiced</div>,
+        cell: ({ row }) => {
+            const timestamp = row.getValue<Date | null>("lastPracticedAt");
+            const day = timestamp ? timestamp.toLocaleDateString() : "Not Logged";
+            return <div className="text-right">{day}</div>
+        },
+    },
+]

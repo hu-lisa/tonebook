@@ -28,7 +28,7 @@ export default async function Page() {
                     
                     {items.length > 0 ? types.map((type) => (
                         <TabsContent key={type.value} value={type.value}>
-                            <div className="grid grid-cols-3 gap-2">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                                 {items.filter(item => (item.type === type.value)).map((gear) => (
                                     <GearCard gear={gear} key={gear.id} />
                                 ))}

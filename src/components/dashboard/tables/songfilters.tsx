@@ -39,18 +39,18 @@ export function SongFilters() {
             value={activeTab} 
             onValueChange={setTabUrl}
         >
-            <div className="flex flex-row space-x-2">
-                <Field className="w-150">
-                    <Input 
-                        id="search" 
+            <div className="flex flex-col sm:flex-row gap-2">
+                <Field className="w-full sm:w-150">
+                    <Input
+                        id="search"
                         autoComplete="off"
-                        placeholder="Search for a song" 
+                        placeholder="Search for a song"
                         onChange={(e) => {
                             handleSearch(e.target.value);
                         }}
                     />
                 </Field>
-                <TabsList className="ml-auto">
+                <TabsList className="sm:ml-auto">
                     {songTabs.map((tab) => (
                         <TabsTrigger key={tab.value} value={tab.value}>
                             {tab.display}
