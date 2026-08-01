@@ -29,7 +29,7 @@ export default async function Page(props: {
 
             <header className="mt-5 text-2xl">Currently Learning</header>
             <div className="flex flex-col space-y-1">
-                {<DataTable columns={columns} data={songList.data} pageCount={songList.pageCount} />}
+                {<DataTable data={songList.data} pageCount={songList.pageCount} />}
                 <SongPagination pageCount={songList.pageCount} />
             </div>
         </div>
