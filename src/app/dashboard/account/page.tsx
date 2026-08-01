@@ -13,7 +13,7 @@ export default async function Page() {
             <header className="text-2xl">Profile</header>
             <AccountPanel email={email} />
             <Separator />
-            <div className="flex flex-row-reverse gap-2">
+            <div className="flex flex-row-reverse flex-wrap gap-2">
                 <DeleteForm />
                 <PasswordForm />
             </div>
