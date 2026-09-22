@@ -24,7 +24,8 @@ export async function addPreset(data: {
             );
         });
         revalidatePath(`/dashboard/songs/${data.songId}`);
-    } catch {
+    } catch (error) {
+        console.error('Failed to add preset:', error);
         return { error: 'Something went wrong' };
     }
 }
