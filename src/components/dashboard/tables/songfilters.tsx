@@ -18,6 +18,7 @@ export function SongFilters() {
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const activeTab = searchParams.get('status') ?? 'all';
+    const query = searchParams.get('q') ?? '';
     const router = useRouter();
 
     function setTabUrl(value: string) {
@@ -45,6 +46,7 @@ export function SongFilters() {
                         id="search"
                         autoComplete="off"
                         placeholder="Search for a song"
+                        value={query}
                         onChange={(e) => {
                             handleSearch(e.target.value);
                         }}

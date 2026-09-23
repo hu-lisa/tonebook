@@ -268,6 +268,10 @@ export default function CreateForm({ songId, loadouts }: { songId: number, loado
                         </ScrollArea>
                     }
 
+                    {form.formState.errors.root && (
+                        <FieldError errors={[form.formState.errors.root]} />
+                    )}
+
                     <DialogFooter>
                         {page.step === 2 &&
                             <Button variant="outline" className="mr-auto" onClick={() => setPage({ open: true, step: 1 })}>Back</Button>
