@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Sidebar, SidebarHeader, SidebarContent, SidebarGroup, SidebarMenu, SidebarMenuButton, SidebarFooter, SidebarMenuItem } from "../ui/sidebar";
 import { usePathname } from "next/navigation";
 
-const links = [
+export const links = [
     {href: '/dashboard', label: 'Home'},
     {href: '/dashboard/songs', label: 'Songs'},
     {href: '/dashboard/gear', label: 'Gear'},
@@ -14,7 +14,7 @@ export default function SideNav() {
 
     return (
         <Sidebar collapsible="none" className="h-screen">
-        <SidebarHeader className="px-2 text-lg font-semibold">ToneVault</SidebarHeader>
+        <SidebarHeader className="px-2 text-lg font-semibold">ToneBook</SidebarHeader>
         <SidebarContent>
             <SidebarGroup>
                 <SidebarMenu>

@@ -26,7 +26,7 @@ export default async function Page(props: {
             </div>
             <div className="flex flex-col space-y-1">
                 <SongFilters />
-                {<DataTable columns={columns} data={songList.data} pageCount={songList.pageCount} />}
+                {<DataTable data={songList.data} pageCount={songList.pageCount} />}
                 <SongPagination pageCount={songList.pageCount}/>
             </div>
         </div>

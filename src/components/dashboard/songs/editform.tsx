@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { updateSong } from "@/app/actions/songs";
 import { useState } from "react";
+import { PencilIcon } from "lucide-react";
 
 
 export default function EditForm({ song }: { song: Song }) {

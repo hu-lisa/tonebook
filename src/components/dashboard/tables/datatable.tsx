@@ -17,21 +17,23 @@ import {
 } from '@/components/ui/table';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { SongWithTags } from '@/db/schema';
+import { columns, mobileColumns } from './columns';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface DataTableProps {
-    columns: ColumnDef<SongWithTags, unknown>[],
     data: SongWithTags[],
     pageCount: number,
 };
 
 export function DataTable({
-    columns,
     data,
 }: DataTableProps) {
     const router = useRouter();
+    const isMobile = useIsMobile();
+    const tablecols: ColumnDef<SongWithTags>[] = isMobile ? mobileColumns : columns;
     const table = useReactTable<SongWithTags>({
         data,
-        columns,
+        columns: tablecols,
         getCoreRowModel: getCoreRowModel(),
         manualPagination: true,
         manualFiltering: true,
@@ -78,7 +80,7 @@ export function DataTable({
                         ))
                     ) : (
                         <TableRow>
-                            <TableCell colSpan={columns.length} className="h-24 text-center">
+                            <TableCell colSpan={tablecols.length} className="h-24 text-center">
                                 {searchParams.get('q')
                                     ? 'No results.'
                                     : 'No songs yet. Add one from the songs page!'

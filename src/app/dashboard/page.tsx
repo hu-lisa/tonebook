@@ -19,7 +19,7 @@ export default async function Page(props: {
         <div className="flex flex-col space-y-2">
             <header className="text-2xl">Quick Access</header>
             {songList.data.length > 0 ?
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                     {songList.data.slice(0, 3).map((song) => (
                         <SongCard key={song.id} song={song} />
                     ))}
@@ -29,7 +29,7 @@ export default async function Page(props: {
 
             <header className="mt-5 text-2xl">Currently Learning</header>
             <div className="flex flex-col space-y-1">
-                {<DataTable columns={columns} data={songList.data} pageCount={songList.pageCount} />}
+                {<DataTable data={songList.data} pageCount={songList.pageCount} />}
                 <SongPagination pageCount={songList.pageCount} />
             </div>
         </div>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export default function AccountPanel({ email }: { email: string }) {
     return (
-        <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-row flex-wrap justify-between items-center gap-2">
             <p>{`Email: ${email}`}</p>
             <Button variant="outline" onClick={() => logOut()}>Log Out</Button>
         </div>
